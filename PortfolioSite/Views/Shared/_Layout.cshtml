@@ -3,29 +3,51 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - Krista Marie B Portfolio Site</title>
+    @Styles.Render("~/Content/bootstrap.min.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Krista Marie B", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-                    <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
-                </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @Html.ActionLink("Krista Marie B", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Resume", "Resume", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Portfolio", "Portfolio", "Home", new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Blog", "Blog", "Home", new { @class = "nav-link" })
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+                <!--
+    <ul class="nav navbar-nav">
+        @Html.ActionLink("Krista Marie B", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+        <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+    </ul>
+        -->
             </div>
         </div>
     </div>
