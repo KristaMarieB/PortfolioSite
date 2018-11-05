@@ -19,6 +19,11 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <!-- Your links are not properly formatted here, you are using a different overload
+                        You need to pass in null for the route values object otherwise your links pass in an extra parmeter
+                        which you can see in the URL after you click on one-->
+                    @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
+
                     @Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
