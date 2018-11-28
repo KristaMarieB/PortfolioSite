@@ -6,12 +6,10 @@
     <title>@ViewBag.Title - Krista Marie B Portfolio Site</title>
     @Styles.Render("~/Content/bootstrap.min.css")
     @Scripts.Render("~/bundles/modernizr")
-
-    @Scripts.Render("~/Scripts/quotes.js")
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <img src="~/Images/KBIcon1.png" height="70"/>
+        <img src="~/Images/KBIcon1.png" height="70" />
         @Html.ActionLink("Krista Marie B", "Index", "Home", null, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,7 +24,7 @@
                     @Html.ActionLink("Resume", "Resume", "Home", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Portfolio", "Portfolio", "Home", null,  new { @class = "nav-link" })
+                    @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
@@ -41,19 +39,7 @@
             </form>
         </div>
     </nav>
-                <!--
-    <ul class="nav navbar-nav">
-        @Html.ActionLink("Krista Marie B", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
-        <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-        <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
-    </ul>
-        -->
-            </div>
-        </div>
-    </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -64,6 +50,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)    
+    @Scripts.Render("~/Scripts/site.css")
+
+    @Scripts.Render("~/Scripts/quotes.js")
 </body>
 </html>
