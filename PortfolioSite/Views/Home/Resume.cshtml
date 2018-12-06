@@ -3,19 +3,22 @@
     ViewBag.Title = "Resume";
 }
 <br />
-<style>
-    body {
-        background: url("/Images/CoffeeBeans.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 1600px;
-        margin: auto;
+@section head {
+    <style>
+        body {
+            background: url("/Images/CoffeeBeans.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1600px;
+            margin: auto;
+        }
+
+        #resume {
+            background-color: antiquewhite;
+        }
+    </style> 
     }
 
-    #resume {
-        background-color: lavender;
-    }
-</style>
 <div id="resume" class="jumbotron text-center">
     <h1>Resume</h1>
     <h4>Compentencies</h4>

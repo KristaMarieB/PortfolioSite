@@ -20,5 +20,7 @@ namespace PortfolioSite.Models
         }
 
         public System.Data.Entity.DbSet<PortfolioSite.Models.Visitor> Visitors { get; set; }
+
+        public System.Data.Entity.DbSet<PortfolioSite.Models.Blog> Blogs { get; set; }
     }
 }
