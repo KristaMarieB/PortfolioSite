@@ -17,6 +17,7 @@ namespace PortfolioSite.Controllers
         // GET: Blog Posts
         public ActionResult Index()
         {
+            // currently throwing error
             return View(_db.Blogs.ToList());
         }
 
