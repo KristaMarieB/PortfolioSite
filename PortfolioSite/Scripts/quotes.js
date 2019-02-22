@@ -36,6 +36,26 @@ window.onload = function () {
         {
             quote: "When you’re at the end of your rope, tie a knot and hold on.",
             name: "Theodore Roosevelt"
+        },
+        {
+            quote: "Let us choose for ourselves our path in life, and let us try to strew that path with flowers.",
+            name: "Emilie du Chatelet"
+        },
+        {
+            quote: "If you know you are on the right track, if you have this inner knowledge, then nobody can turn you off… no matter what they say.",
+            name: "Barbara McClintock"
+        },
+        {
+            quote: "The more clearly we can focus our attention on the wonders and realities of the universe about us, the less taste we shall have for destruction.",
+            name: "Rachel Carson"
+        },
+        {
+            quote: "Life need not be easy, provided only that it is not empty.",
+            name: "Lise Meitner"
+        },
+        {
+            quote: "Don’t let anyone rob you of your imagination, your creativity, or your curiosity. It’s your place in the world; it’s your life. Go on and do all you can with it, and make it the life you want to live.",
+            name: "Mae Jemison"
         }
 
     ];

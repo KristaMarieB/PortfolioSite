@@ -17,6 +17,7 @@ namespace PortfolioSite.Controllers
         // GET: Blog Posts
         public ActionResult Index()
         {
+            //would access API here and retrieve posts
             return View(_db.Blogs.ToList());
         }
 

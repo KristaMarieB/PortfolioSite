@@ -179,22 +179,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\VisitorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812042038385_InitialCreate.cs" />
-    <Compile Include="Migrations\201812042038385_InitialCreate.Designer.cs">
-      <DependentUpon>201812042038385_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812052346470_Blog.cs" />
-    <Compile Include="Migrations\201812052346470_Blog.Designer.cs">
-      <DependentUpon>201812052346470_Blog.cs</DependentUpon>
+    <Compile Include="Migrations\201902220023254_Initial.cs" />
+    <Compile Include="Migrations\201902220023254_Initial.Designer.cs">
+      <DependentUpon>201902220023254_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\PortfolioContext.cs" />
-    <Compile Include="Models\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -281,11 +275,6 @@
     <Content Include="Views\Home\Resume.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Visitors\Create.cshtml" />
-    <Content Include="Views\Visitors\Delete.cshtml" />
-    <Content Include="Views\Visitors\Details.cshtml" />
-    <Content Include="Views\Visitors\Edit.cshtml" />
-    <Content Include="Views\Visitors\Index.cshtml" />
     <Content Include="Views\Blogs\Create.cshtml" />
     <Content Include="Views\Blogs\Delete.cshtml" />
     <Content Include="Views\Blogs\Details.cshtml" />
@@ -313,15 +302,12 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812042038385_InitialCreate.resx">
-      <DependentUpon>201812042038385_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812052346470_Blog.resx">
-      <DependentUpon>201812052346470_Blog.cs</DependentUpon>
-    </EmbeddedResource>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <EmbeddedResource Include="Migrations\201902220023254_Initial.resx">
+      <DependentUpon>201902220023254_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

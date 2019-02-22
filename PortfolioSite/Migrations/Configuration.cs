@@ -10,7 +10,6 @@ namespace PortfolioSite.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "PortfolioSite.Models.PortfolioContext";
         }
 
         protected override void Seed(PortfolioSite.Models.PortfolioContext context)
