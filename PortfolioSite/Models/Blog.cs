@@ -13,10 +13,14 @@ namespace PortfolioSite.Models
 
         [Key]
         public int PostID { get; set; }
+
         public string Title { get; set; }
         [DataType(DataType.MultilineText)]
+
         public string Content { get; set; }
+
         public string URL { get; set; }
+
         public DateTime PublishedDate { get; set; }
 
         //public string Author { get; set; }
