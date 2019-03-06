@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortfolioSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -10,31 +11,40 @@ namespace PortfolioSite.Controllers
 {
     public class BlogController : Controller
     {
+        /*
+         Blog ID: 6944967079157211687
+        */
         static HttpClient Client = new HttpClient();
 
         // GET: Blog
-        public ActionResult BlogIndex()
+        public async Task<ActionResult> BlogIndex() // to write async code had to change it to type from ActionResult -> Task<ActionResult>
         {
-            // create httpclient
-            // intitalize properties for client
-            // using GET methods, blogger has addresses would be using
-            // make a class based off the json response
+            BloggerPostsResponse allPosts = await GetAllPostsAsync();
+            if(allPosts == null)
+            {
+                // TODO: ensure that if the object is null the page somehow says "No posts to display at this time"
+                return View();
+            }
 
-
-
-            return View();
+            return View(allPosts);
         }
 
 
-        public async Task<Uri> GetPostListAsync()
+        public async Task<BloggerPostsResponse> GetAllPostsAsync()
         {
-            try
+            // add a try/catch later
+            Client.BaseAddress = new Uri("https://www.googleapis.com/blogger/v3/");
+            HttpResponseMessage response = await Client.GetAsync("blogs/6944967079157211687/posts?key=myAPIKey");
+            if (response.IsSuccessStatusCode)
             {
-                Client.BaseAddress = new Uri("https://www.googleapis.com/blogger/v3/blogs/6944967079157211687/posts");
-                HttpResponseMessage response = Client.G;
-                resposne.
-
+                BloggerPostsResponse blogPosts = await response.Content.ReadAsAsync<BloggerPostsResponse>();
+                return blogPosts;
             }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }
