@@ -20,11 +20,44 @@
 }
 
 
-<div id="blog" class="jumbotron text-center">
-    <h1>Blog</h1>
-    @foreach (var item in Model.items)
-    {
-        <h3>@item.title</h3>
-        @Html.Raw( item.content )
-    }
-</div>
+    <div id="blog" class="jumbotron text-center">
+        <h1>Blog</h1>
+
+        @foreach (var item in Model.items)
+        {
+            
+            <!-- Button trigger modal -->
+        <button id="content" type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalLong-@(item.id)">
+            @item.title  
+            @{ 
+                string src = @"src=";
+                int startI = item.content.IndexOf(src);
+                int endI = item.content.IndexOf("\"", startI + 5);
+                var imgURL = item.content.Substring(startI + 5, endI - startI - 5);
+            }
+            <img src="@imgURL" />
+        </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong-@(item.id)" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">@item.title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @Html.Raw(item.content)
+                        </div>
+                        <div class="modal-footer">
+                            <div class="">@item.published.Date.ToString("MM/dd/yyyy")</div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>

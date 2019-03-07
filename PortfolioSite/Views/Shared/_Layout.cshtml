@@ -44,7 +44,6 @@
                 </li>
                 <li>
                     @Html.ActionLink("Blog", "BlogIndex", "Blog", null, new { @class = "nav-link" })
-                    @*@Html.ActionLink("Blog", "Index", "Blogs", null, new { @class = "nav-link" })*@
                 </li>
             </ul>
         </div>
@@ -65,7 +64,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)    
     @Scripts.Render("~/Scripts/site.css")
-
+    
     @Scripts.Render("~/Scripts/quotes.js")
 </body>
 </html>
