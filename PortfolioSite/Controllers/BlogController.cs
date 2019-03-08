@@ -18,7 +18,7 @@ namespace PortfolioSite.Controllers
         const string key = "";
 
         // GET: Blog
-        public async Task<ActionResult> BlogIndex() // to write async code had to change it to type from ActionResult -> Task<ActionResult>
+        public async Task<ActionResult> Blog() // to write async code had to change it to type from ActionResult -> Task<ActionResult>
         {
             BloggerPostsResponse allPosts = await GetAllPostsAsync();
 
