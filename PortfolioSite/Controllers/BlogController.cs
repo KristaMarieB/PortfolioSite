@@ -15,7 +15,7 @@ namespace PortfolioSite.Controllers
          Blog ID: 6944967079157211687
         */
         static HttpClient Client = new HttpClient();
-        const string key = "";
+        const string key = "AIzaSyA_ska9fWvLpsowXMqNgLUp6t7xOL0psxY";
 
         // GET: Blog
         public async Task<ActionResult> Blog() // to write async code had to change it to type from ActionResult -> Task<ActionResult>

@@ -298,8 +298,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Blog\Blog.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Blog\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
