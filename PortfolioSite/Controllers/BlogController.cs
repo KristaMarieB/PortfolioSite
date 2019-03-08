@@ -15,17 +15,12 @@ namespace PortfolioSite.Controllers
          Blog ID: 6944967079157211687
         */
         static HttpClient Client = new HttpClient();
-        //const string key = "";
+        const string key = "";
 
         // GET: Blog
         public async Task<ActionResult> BlogIndex() // to write async code had to change it to type from ActionResult -> Task<ActionResult>
         {
             BloggerPostsResponse allPosts = await GetAllPostsAsync();
-            if(allPosts == null)
-            {
-                // TODO: ensure that if the object is null the page somehow says "No posts to display at this time"
-                return View();
-            }
 
             return View(allPosts);
         }
