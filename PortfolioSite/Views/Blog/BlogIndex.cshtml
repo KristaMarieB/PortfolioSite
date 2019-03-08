@@ -1,6 +1,6 @@
-﻿
+﻿@model PortfolioSite.Models.BloggerPostsResponse
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "BlogIndex";
 }
 <br />
 @section head {
@@ -17,13 +17,14 @@
             background-color: #e9e3ef;
         }
     </style>
-    }
+}
 
 
 <div id="blog" class="jumbotron text-center">
-    <h2>Blog</h2>
-    <p>Going to use Blogger API... still figuring it out</p>
+    <h1>Blog</h1>
+    @foreach (var item in Model.items)
+    {
+        <h3>@item.title</h3>
+        @Html.Raw( item.content )
+    }
 </div>
-
-
-
