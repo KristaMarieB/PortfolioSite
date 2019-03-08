@@ -232,6 +232,8 @@
     <Content Include="Images\KBIcon2.PNG" />
     <Content Include="Images\KMBIcon.png" />
     <Content Include="Images\MountRainier.jpg" />
+    <Content Include="Images\stars-sm.jpg" />
+    <Content Include="Images\sunset-sm.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
