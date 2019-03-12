@@ -19,6 +19,7 @@ namespace PortfolioSite.Models
         public string Subject { get; set; }
 
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Message { get; set; }
     }
 }
