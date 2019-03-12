@@ -15,23 +15,28 @@ namespace PortfolioSite.Controllers
         /*
          Blog ID: 6944967079157211687
         */
-        static HttpClient Client = new HttpClient();
-        string key = ConfigurationManager.AppSettings["BloggerAPIKey"];
+        static HttpClient _Client = new HttpClient();
+        static string _key = ConfigurationManager.AppSettings["BloggerAPIKey"];
+
+        static BlogController()
+        {
+            _Client.BaseAddress = new Uri("https://www.googleapis.com/blogger/v3/");
+        }
 
         // GET: Blog
         public async Task<ActionResult> Blog() // to write async code had to change it to type from ActionResult -> Task<ActionResult>
         {
+            
             BloggerPostsResponse allPosts = await GetAllPostsAsync();
 
             return View(allPosts);
         }
 
-
-        public async Task<BloggerPostsResponse> GetAllPostsAsync()
+        public static async Task<BloggerPostsResponse> GetAllPostsAsync()
         {
             // add a try/catch later
-            Client.BaseAddress = new Uri("https://www.googleapis.com/blogger/v3/");
-            HttpResponseMessage response = await Client.GetAsync($"blogs/6944967079157211687/posts?key={key}");
+            
+            HttpResponseMessage response = await _Client.GetAsync($"blogs/6944967079157211687/posts?key={_key}");
             if (response.IsSuccessStatusCode)
             {
                 BloggerPostsResponse blogPosts = await response.Content.ReadAsAsync<BloggerPostsResponse>();

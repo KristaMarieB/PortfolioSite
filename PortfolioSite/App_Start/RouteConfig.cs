@@ -18,7 +18,13 @@ namespace PortfolioSite
                 url: "{action}",
                 defaults: new { controller = "Home", action = "Index"}
             );
-            
+
+            routes.MapRoute(
+                name: "Other",
+                url: "{Controller}",
+                defaults: new { controller = "Blog", action = "Blog" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

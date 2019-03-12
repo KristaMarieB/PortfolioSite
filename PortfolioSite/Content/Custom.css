@@ -2,3 +2,11 @@
     font-family: 'Over the Rainbow', cursive !important;
     font-weight: bold;
 }
+#socialMedia a {
+    text-decoration: none;
+    color: black;
+}
+
+#socialMedia a:hover {
+    opacity: .5;
+}
