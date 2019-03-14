@@ -1,0 +1,72 @@
+﻿@model PortfolioSite.Models.ContactForm
+
+@{
+    ViewBag.Title = "Contact Me";
+}
+
+<br />
+@section head {
+    <style>
+        body {
+            background: url("/Images/cloud-landscape-mountain-1036371.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #contact {
+            background-color: e9e3ef;
+        }
+    </style>
+}
+
+    <div id="contact" class="jumbotron">
+        <h1 class="text-center">@ViewBag.Title</h1>
+        <hr />
+        @if(ViewBag.Message != null)
+        {
+           <h4>@ViewBag.Message</h4>
+        }
+           <div style="margin-left: 25%; margin-right: 25%; text-align:center">
+               @using (Html.BeginForm())
+               {
+                   @Html.ValidationSummary(true)
+                   <div class="form-group">
+                       @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                       @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                   </div>
+
+                   <div class="form-group">
+                       @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email"} })
+                       @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                   </div>
+
+                   <div class="form-group">
+                       @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", @placeholder = "Subject"} })
+                       @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                   </div>
+
+                   <div class="form-group">
+                       @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Message", @style = "height: 8em;" } })
+                       @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                   </div>
+                   <div class="form-group">
+                       <input type="submit" value="Send" class="btn btn-primary"><br />
+                       <!-- far fa-paper-plane fa-2x -->
+                   </div>
+               }
+           </div>
+
+
+        <hr />
+
+        <div id="socialMedia" class="text-center">
+            <a href="https://www.linkedin.com/in/kristamarieb/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/KristaMarieB" target="_blank">
+                <i class="fab fa-github-square fa-2x"></i>
+            </a>
+        </div>
+    </div>

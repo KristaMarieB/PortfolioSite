@@ -12,13 +12,13 @@ namespace PortfolioSite
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            /*
+            
             routes.MapRoute(
                 name: "Custom",
-                url: "{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{action}",
+                defaults: new { controller = "Home", action = "Index"}
             );
-            */
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

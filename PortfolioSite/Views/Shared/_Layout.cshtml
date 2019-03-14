@@ -27,7 +27,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -40,23 +39,29 @@
                     @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Contact", "Contact", "Contact", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
                 </li>
                 <li>
-                    @Html.ActionLink("Blog", "Blog", "Blog", null, new { @class = "nav-link" })
+                    @Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "nav-link" })
                 </li>
             </ul>
+            <div id="socialMedia" class="text-center">
+                <a href="https://www.linkedin.com/in/kristamarieb/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/KristaMarieB" target="_blank">
+                    <i class="fab fa-github-square fa-2x"></i>
+                </a>
+            </div>
         </div>
+
     </nav>
 
     <div class="container body-content">
-        @RenderBody()
 
-        <!--    <hr />
-             <footer>
-        <p>&copy; @DateTime.Now.Year - Krista Marie</p>
-    </footer>
-    -->
+        @RenderBody()
+        @*<p>&copy; @DateTime.Now.Year - Krista Marie</p>*@
+
 
     </div>
 

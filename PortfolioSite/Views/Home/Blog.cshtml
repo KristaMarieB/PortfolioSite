@@ -47,9 +47,10 @@
 
     <div id="blog" class="jumbotron text-center">
         <h1>Blog</h1>
+        <hr />
         @if (Model == null)
         {
-            <p>No posts to display at this time... check out my full blog <a id="noPosts" href="https://codingandcats.blogspot.com/" target="_blank">here!</a></p>
+            <p>No posts to display at this time... check out my full blog for more</p>
         }
         else
         {
@@ -102,4 +103,5 @@
                 type="button" id="content" onclick="window.open('https://codingandcats.blogspot.com/', '_blank')">
             View Full Blog...<br />
         </button>
+        <hr />
     </div>
