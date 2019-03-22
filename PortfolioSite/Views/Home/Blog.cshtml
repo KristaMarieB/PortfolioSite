@@ -1,6 +1,6 @@
 ﻿@model PortfolioSite.Models.BloggerPostsResponse
 @{
-    ViewBag.Title = "BlogIndex";
+    ViewBag.Title = "Blog";
 }
 <br />
 @section head {
@@ -57,20 +57,37 @@
             foreach (var item in Model.items)
             {
                 string src = @"src=";
-                int startI = item.content.IndexOf(src);
-                int endI = item.content.IndexOf("\"", startI + 5);
-                var imgURL = item.content.Substring(startI + 5, endI - startI - 5);
+                if (item.content.IndexOf(src) != -1)
+                {
+                    int startI = item.content.IndexOf(src);
+                    int endI = item.content.IndexOf("\"", startI + 5);
+                    var imgURL = item.content.Substring(startI + 5, endI - startI - 5);
+                    <!-- Button trigger modal -->
+                    <button style="
+                            background: url(@imgURL) center;
+                            width: 200px !important;
+                            height: 200px;
+                            border-radius: 50%;"
+                            type="button" id="content" data-toggle="modal" data-target="#exampleModalLong-@(item.id)">
+                        @item.title<br />
+                        <div style="font-size: small">@item.published.ToString("MMMM dd, yyyy")</div>
+                    </button>
+                }
+                else
+                {
+                    <!-- Button trigger modal -->
+                    <button style="
+                            width: 200px !important;
+                            height: 200px;
+                            border-radius: 50%;"
+                            type="button" id="content" data-toggle="modal" data-target="#exampleModalLong-@(item.id)">
+                        @item.title<br />
+                        <div style="font-size: small">@item.published.ToString("MMMM dd, yyyy")</div>
+                    </button>
+                }
 
-                <!-- Button trigger modal -->
-                <button style="
-                background: url(@imgURL) center;
-                width: 200px !important;
-                height: 200px;
-                border-radius: 50%;"
-                        type="button" id="content" data-toggle="modal" data-target="#exampleModalLong-@(item.id)">
-                    @item.title<br />
-                    <div style="font-size: small">@item.published.ToString("MMMM dd, yyyy")</div>
-                </button>
+
+
 
 
                 <!-- Modal -->
