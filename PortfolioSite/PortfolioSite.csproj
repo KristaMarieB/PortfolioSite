@@ -259,7 +259,9 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Properties\PublishProfiles\KristaMarieB - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\KristaMarieB - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\KristaMarieB - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\KristaMarieB - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -311,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
